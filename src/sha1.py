@@ -22,9 +22,10 @@ class sha1:
         words = self._generate_blocks(message)
         words_length = len(words)
         for i in range(words_length):
-            # print("block", i, ":", words[i])
-            # print("block", i, " bit_length :", (8 * len(words[i])) & 0xffffffffffffffff)
+            print("block", i, ":", words[i])
+            print("block", i, " bit_length :", (8 * len(words[i])) & 0xffffffffffffffff)
             pass
+        
             
         # 3. ブロックごとに処理を行う
         h0, h1, h2, h3, h4 = self._initialize_registers() # 初期値の設定
@@ -107,7 +108,7 @@ class sha1:
 # 使い方の例
 
 if __name__ == '__main__':
-  input_string = "hello" #input("文字列を入力してください:")
+  input_string = "abc" #input("文字列を入力してください:")
   hasher = sha1(input_string)
   hashed_string = hasher.hash()
   
